@@ -1,0 +1,18 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import PageHeader from "../../components/PageHeader.svelte";
+import ElementList from "../../components/ElementList.svelte";
+---
+
+<DefaultLayout title='Images page'>
+  <div
+    class='min-h-screen overflow-hidden md:px-0 mx-auto w-full flex flex-col items-center'
+  >
+    <PageHeader client:visible />
+    <div class='w-full'>
+      <ElementList client:visible />
+    </div>
+  </div>
+</DefaultLayout>
+
+<script lang='ts' is:inline></script>

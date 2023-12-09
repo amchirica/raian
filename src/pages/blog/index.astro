@@ -1,0 +1,15 @@
+---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
+import BlogBanner from "../../components/blog/BlogBanner.svelte";
+import fetchApi from "../../utils/strapi";
+import BlogCard from "../../components/BlogCard.svelte";
+
+const data: [] = await fetchApi({ endpoint: "blogs", wrappedByKey: "data" });
+---
+
+<DefaultLayout title='BLog page'>
+  <BlogBanner />
+  <div class='p-4'>
+    {data.map((blog) => <BlogCard blog={blog} />)}
+  </div>
+</DefaultLayout>
